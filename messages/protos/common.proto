@@ -1,0 +1,24 @@
+syntax="proto3";
+
+package Google;
+
+import "google/protobuf/any.proto";
+
+message Request
+{
+    string controller=1;
+    string method=2;
+    google.protobuf.Any req=3;
+}
+
+message Response
+{
+    bool success=1;
+    string info=2;
+    google.protobuf.Any result=3;
+}
+
+message ResultException
+{
+    string className=1;
+}
